@@ -1,0 +1,14 @@
+# Copyright (c) 2026 Scintillae Ltd. All rights reserved.
+
+# -----------------------------------------------------------------------------
+# Relic platform manifest: DOS / DJGPP x86
+# -----------------------------------------------------------------------------
+id           = "dos-djgpp-x86"
+description  = "DOS, DJGPP (GCC) targeting x86 (32-bit)"
+backend      = "allegro-dos"
+toolchain    = "gcc"
+arch         = "x86"
+build_system = "cmake"
+entry_point  = "build.ps1"
+c_standard   = "c11"
+libs         = ["allegro", "lwip"]

@@ -1,0 +1,22 @@
+# Local dependency staging helpers - not part of the source release
+stage-deps.bat
+clean-deps.bat
+
+# Convenience build wrappers (local testing; the release builds via
+# platforms/*/build.ps1 as documented in README.md)
+/windows-opengl-mingw-x64.bat
+/windows-opengl-mingw-x86.bat
+/win95-opengl-mingw-x86.bat
+/dos-relic3d-djgpp-x86.bat
+
+# Staged third-party dependencies (see README.md "Drop-in dependencies")
+/thirdparty/
+/include/stb_image.h
+/include/stb_truetype.h
+/src/backends/allegro-dos/include/
+/src/backends/allegro-dos/lib/
+/fonts/
+
+# Build output
+/bin/
+/build/

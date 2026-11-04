@@ -1,0 +1,25 @@
+LICENSE MAP
+===========
+
+All Tigryx-authored source in this tree is GNU GPL v3 (COPYING), with the
+linking/runtime exception in EXCEPTION.md.
+
+Bundled third-party data:
+
+  include/genmidi_freedoom.h — GENMIDI OPL2 instrument bank extracted
+  from freedoom1.wad (the Freedoom project, https://freedoom.github.io).
+  Distributed under the Freedoom project's 3-clause BSD licence, which is
+  reproduced in full at the top of that file.
+
+Third-party derived code:
+
+  src/softfp/softfp_math64.c — the double-precision transcendental
+  routines use the polynomial coefficients and argument-reduction schemes
+  of fdlibm (Copyright (C) 1993 Sun Microsystems, Inc.; "Permission to
+  use, copy, modify, and distribute this software is freely granted,
+  provided that this notice is preserved"). The notice is preserved in
+  that file.
+
+All other third-party dependencies listed in README.md (miniz,
+stb_image, stb_truetype, stb_vorbis, Allegro, lwIP, dr_libs) must be
+obtained separately and remain under their own licences.

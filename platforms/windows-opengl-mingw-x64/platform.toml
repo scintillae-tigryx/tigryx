@@ -1,0 +1,14 @@
+# Copyright (c) 2026 Scintillae Ltd. All rights reserved.
+
+# -----------------------------------------------------------------------------
+# Relic platform manifest: Windows / MinGW-w64 x64
+# -----------------------------------------------------------------------------
+id           = "windows-mingw-x64"
+description  = "Windows Vista+, MinGW-w64 (GCC) targeting x86_64 (64-bit)"
+backend      = "opengl-win32"
+toolchain    = "gcc"
+arch         = "x86_64"
+build_system = "cmake"
+entry_point  = "build.ps1"
+c_standard   = "c11"
+libs         = ["winmm", "user32", "gdi32", "opengl32", "wininet"]

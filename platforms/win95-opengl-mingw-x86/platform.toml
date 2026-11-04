@@ -1,0 +1,14 @@
+# Copyright (c) 2026 Scintillae Ltd. All rights reserved.
+
+# -----------------------------------------------------------------------------
+# Relic platform manifest: Windows 95/98/ME/XP+ / Legacy MinGW x86
+# -----------------------------------------------------------------------------
+id           = "win95-mingw-x86"
+description  = "Windows 95/98/ME/XP+, Legacy MinGW targeting x86 (32-bit) for maximum backward compatibility"
+backend      = "opengl-win32"
+toolchain    = "gcc"
+arch         = "x86"
+build_system = "makefile"
+entry_point  = "build.ps1"
+c_standard   = "c99"
+libs         = ["winmm", "user32", "gdi32", "opengl32", "wininet"]

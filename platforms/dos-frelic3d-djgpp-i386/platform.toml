@@ -1,0 +1,31 @@
+# Copyright (c) 2026 Scintillae Ltd. All rights reserved.
+
+# -----------------------------------------------------------------------------
+# Relic platform manifest: DOS / DJGPP 386 (soft-float + sector-based 3D)
+# -----------------------------------------------------------------------------
+# Same as dos-relic3d-djgpp-i386 but built for machines with NO FPU
+# (386SX/486SX and similar): -DTIGRYX_SOFTFP compiles the whole dependency
+# graph with -msoft-float against the hand-written runtime in src/softfp/,
+# so float ops are plain calls instead of x87 traps reflected through the
+# DPMI host (~25,000 cycles each on this class of hardware).
+#
+# This platform uses the allegro-fixed-dos backend rather than allegro-dos.
+# Profiling on a 486SX showed the generic z-buffered triangle rasteriser is
+# fill-bound at 320x200 (2.4x overdraw), so shaving per-triangle setup cost
+# could not reach a playable frame rate no matter how much fixed-point was
+# applied. allegro-fixed-dos instead renders the classic BSP-engine way:
+# front-to-back BSP walk with a solid-segment clip list, per-column walls,
+# visplane floors/ceilings, colormap lighting - which removes the z-buffer,
+# the overdraw and the per-pixel perspective divide entirely. It still provides
+# the full regular API (2D, sprites, text, @mesh) so a script can mix the
+# sector-based world renderer with ordinary 2D HUD drawing in the same frame.
+
+id           = "dos-frelic3d-djgpp-i386"
+description  = "DOS, DJGPP (GCC) targeting 386 (32-bit, sector-based 3D)"
+backend      = "allegro-fixed-dos"
+toolchain    = "gcc"
+arch         = "x86"
+build_system = "cmake"
+entry_point  = "build.ps1"
+c_standard   = "c11"
+libs         = ["allegro"]
